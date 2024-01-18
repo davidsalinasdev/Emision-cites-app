@@ -28,7 +28,7 @@ class Server {
 
         // Tiene que ejecutarse en ese orden
         // 1.- Base de datos
-        // this.dbConnection();
+        this.dbConnection();
 
         // 2.- This middlerares
         this.middlewares();
@@ -42,11 +42,13 @@ class Server {
 
         try {
 
-            await db.authenticate();
+            await db.authenticate(); // Si pasa esto la bd esta online
             console.log('Database online');
 
         } catch (error) {
-            console.error('No se puede conectar a la base de datos:', error);
+
+            throw new Error(`No se puede conectar a la base de datos: ${error}`);
+
         }
 
 

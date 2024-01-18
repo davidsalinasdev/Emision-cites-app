@@ -1,9 +1,9 @@
 import { Sequelize } from 'sequelize';
 
 
-const db = new Sequelize('node', 'postgres', 'password', {
+const db = new Sequelize('cite_node_bd', 'root', '', {
     host: 'localhost',
-    dialect: 'postgres'
+    dialect: 'mysql'
     // logging: false,
 });
 
